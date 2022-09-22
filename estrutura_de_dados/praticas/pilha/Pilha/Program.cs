@@ -21,6 +21,7 @@ namespace Pilha
             int numero;
             int tamanhoPilhaNumerico;
 
+            // Mostra a quantia de espaços restantes na pilha
             int numeroDeEspaços;
 
             //Variável booleana para while da pilha
