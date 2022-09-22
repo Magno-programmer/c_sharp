@@ -72,7 +72,6 @@ namespace Pilha
                             Console.Clear();
                             Console.WriteLine($"Você empilhou o valor {p.Desempilhar()}!");
                             p.Empilhar(ValorEmpilhar);
-
                         }
                         else
                         {
@@ -131,8 +130,6 @@ namespace Pilha
                     Console.Clear();
                     Console.WriteLine("Opção inválida/Inexistente!");
                 }
-                
-
 
             }
             Console.WriteLine("\n\nPressione qualquer tecla para sair...");
