@@ -21,6 +21,8 @@ namespace Pilha
             int numero;
             int tamanhoPilhaNumerico;
 
+            int numeroDeEspaços;
+
             //Variável booleana para while da pilha
             bool validar = true;        
 
@@ -40,6 +42,8 @@ namespace Pilha
             Pilha p = new Pilha(tamanhoPilhaNumerico);
             Console.Clear();
 
+            numeroDeEspaços = tamanhoPilhaNumerico;
+            Console.WriteLine($"Você tem {numeroDeEspaços} de {tamanhoPilhaNumerico} espaços na sua pilha!");
             while (validar)
             {
                 Opcoes();
@@ -53,11 +57,12 @@ namespace Pilha
                     Opcoes();
                     numerico = Console.ReadLine();
                 }
-                
-                numero = int.Parse(numerico);
 
+                numero = int.Parse(numerico);
+                
                 if(numero >= 0 && numero <= 3)
                 {
+                    
                     // Empilhar valor se não tiver cheia
                     if (numero == 1)
                     {
@@ -72,11 +77,14 @@ namespace Pilha
                             Console.Clear();
                             Console.WriteLine($"Você empilhou o valor {p.Desempilhar()}!");
                             p.Empilhar(ValorEmpilhar);
+
+                            Console.WriteLine($"Você tem {numeroDeEspaços = numeroDeEspaços-1} de {tamanhoPilhaNumerico} espaços na sua pilha!");
                         }
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("Pilha Cheia! Desempilhe um valor para empilhar novamente!");
+                            Console.WriteLine($"Você tem {numeroDeEspaços} de {tamanhoPilhaNumerico} espaços na sua pilha!");
+                            Console.WriteLine("Desempilhe um valor para empilhar novamente!");
                         }
                     }
                     else if (numero == 2) //Desempilha um único valor e mostra na tela
@@ -84,7 +92,8 @@ namespace Pilha
                         if (p.Vazia())
                         {
                             Console.Clear();
-                            Console.WriteLine("Por favor, coloque um valor na pilha!");
+                            Console.WriteLine($"Você tem {numeroDeEspaços} de {tamanhoPilhaNumerico} espaços na sua pilha!");
+                            Console.WriteLine("Por favor, coloque um valor!");
                         }
                         else
                         {
@@ -93,6 +102,7 @@ namespace Pilha
                             Console.Write("\n\nPressione qualquer tecla para continuar...");
                             Console.ReadKey();
                             Console.Clear();
+                            Console.WriteLine($"Você tem {numeroDeEspaços = numeroDeEspaços+1} de {tamanhoPilhaNumerico} espaços na sua pilha!");
                         }
 
                     }
@@ -101,7 +111,16 @@ namespace Pilha
                         if (!p.Cheia())
                         {
                             Console.Clear();
-                            Console.WriteLine("Por favor, preencha a pilha primeiro!");
+                            Console.WriteLine("Desempilhar Tudo: ");
+                            for (int i = 0; i < tamanhoPilhaNumerico - numeroDeEspaços; i++)
+                            {
+                                Console.WriteLine(p.Desempilhar());
+                            }
+                            Console.WriteLine($"\n***Você imprimiu todos os {numeroDeEspaços = tamanhoPilhaNumerico - numeroDeEspaços} valores empilhados!***");
+                            Console.Write("\n\nPressione qualquer tecla para continuar...");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine($"Você tem {numeroDeEspaços = tamanhoPilhaNumerico} de {tamanhoPilhaNumerico} espaços na sua pilha!");
                         }
                         else
                         {
@@ -115,6 +134,7 @@ namespace Pilha
                             Console.Write("\n\nPressione qualquer tecla para continuar...");
                             Console.ReadKey();
                             Console.Clear();
+                            Console.WriteLine($"Você tem {numeroDeEspaços = tamanhoPilhaNumerico} de {tamanhoPilhaNumerico} espaços na sua pilha!");
                         }
 
                     }
