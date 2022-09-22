@@ -131,7 +131,7 @@ namespace Pilha
                             {
                                 Console.WriteLine(p.Desempilhar());
                             }
-                            Console.WriteLine("\n***Você imprimiu os valores empilhados!***");
+                            Console.WriteLine("\n***Você imprimiu todos os valores empilhados!***");
                             Console.Write("\n\nPressione qualquer tecla para continuar...");
                             Console.ReadKey();
                             Console.Clear();
